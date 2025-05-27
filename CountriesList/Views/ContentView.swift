@@ -12,16 +12,27 @@ struct ContentView: View {
     @State private var selectedCountry: Country?
         var body: some View {
             NavigationView {
-                List {
-                    ForEach(viewModel.selectedCountries) { country in
-                        Button(action: {
-                                    selectedCountry = country
-                                }) {
-                                    Text(country.name)
-                                }
-                    }
-                    .onDelete { indexSet in
-                        indexSet.forEach { viewModel.removeCountry(viewModel.selectedCountries[$0]) }
+                Group {
+                    if viewModel.isLoading {
+                        VStack {
+                            ProgressView("Loading countries...")
+                                .progressViewStyle(CircularProgressViewStyle())
+                                .padding()
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    } else {
+                        List {
+                            ForEach(viewModel.selectedCountries) { country in
+                                Button(action: {
+                                            selectedCountry = country
+                                        }) {
+                                            Text(country.name)
+                                        }
+                            }
+                            .onDelete { indexSet in
+                                indexSet.forEach { viewModel.removeCountry(viewModel.selectedCountries[$0]) }
+                            }
+                        }
                     }
                 }
                 .sheet(item: $selectedCountry) { country in

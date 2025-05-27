@@ -13,6 +13,7 @@ final class CountryViewModel: ObservableObject {
     @Published var selectedCountries: [Country] = []
     @Published var searchQuery = ""
     @Published var showAlert = false
+    @Published var isLoading: Bool = false
 
     private let storage = LocalStorage()
     private let maxCountries = 5
@@ -24,6 +25,7 @@ final class CountryViewModel: ObservableObject {
     }
 
     func loadCountries() async {
+        isLoading = true
         selectedCountries = storage.load()
         Task {
             do {
@@ -34,6 +36,7 @@ final class CountryViewModel: ObservableObject {
             } catch {
                 print("Failed to fetch countries:", error)
             }
+            isLoading = false
         }
     }
 
