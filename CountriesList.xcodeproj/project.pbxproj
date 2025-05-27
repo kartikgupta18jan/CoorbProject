@@ -108,11 +108,11 @@
 		913381B12DE5C4D20018FDF8 /* CountriesList */ = {
 			isa = PBXGroup;
 			children = (
+				913381EF2DE5DFAF0018FDF8 /* Root */,
 				913381E42DE5CB360018FDF8 /* Helper */,
 				913381E12DE5CA470018FDF8 /* NetworkServices */,
 				913381DE2DE5C9520018FDF8 /* ViewModels */,
 				913381DD2DE5C94B0018FDF8 /* Models */,
-				913381B22DE5C4D20018FDF8 /* CountriesListApp.swift */,
 				913381DC2DE5C93F0018FDF8 /* Views */,
 				913381B62DE5C4DC0018FDF8 /* Assets.xcassets */,
 				913381B82DE5C4DC0018FDF8 /* Preview Content */,
@@ -186,6 +186,14 @@
 				913381E72DE5CB700018FDF8 /* LocalStorage.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		913381EF2DE5DFAF0018FDF8 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				913381B22DE5C4D20018FDF8 /* CountriesListApp.swift */,
+			);
+			path = Root;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
