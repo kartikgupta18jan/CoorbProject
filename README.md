@@ -1,4 +1,5 @@
-# CoorbProject
+# CountriesList
+
 Description
 This is a SwiftUI-based iOS mobile application that allows users to search and save countries, view capital cities and currencies, and auto-select the user's country based on location. It uses MVVM architecture, supports offline data storage, and is built with Swift Concurrency (async/await).
 
